@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,12 +37,12 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Services', href: '/services', isExternal: true },
+    { name: 'About', href: '#about', isExternal: false },
+    { name: 'Projects', href: '#projects', isExternal: false },
+    { name: 'Skills', href: '#skills', isExternal: false },
+    { name: 'Experience', href: '#experience', isExternal: false },
+    { name: 'Contact', href: '#contact', isExternal: false },
   ];
 
   return (
@@ -58,13 +59,23 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary transition-colors"
-                >
-                  {item.name}
-                </a>
+                item.isExternal ? (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                )
               ))}
             </div>
           </div>
@@ -99,14 +110,25 @@ const Navbar = () => {
         <div className="md:hidden glass border-t border-border">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </a>
+              item.isExternal ? (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </a>
+              )
             ))}
           </div>
         </div>

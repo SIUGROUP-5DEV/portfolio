@@ -23,14 +23,14 @@ const Hero = () => {
         <div className="animate-fade-in-up">
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6">
             Hi, I'm{' '}
-            <span className="gradient-text">Alex Johnson</span>
+            <span className="gradient-text">Eng. Ali</span>
           </h1>
           <h2 className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-8">
-            Full Stack Developer
+            Software Development Agent
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            I create modern, scalable web applications with cutting-edge technologies. 
-            Passionate about clean code, user experience, and bringing ideas to life.
+            I provide comprehensive software development services, from web applications to mobile solutions. 
+            Delivering quality code and innovative solutions for your business needs.
           </p>
         </div>
 
@@ -39,9 +39,9 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="glow-button min-w-[200px]"
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              View My Work
+              View My Services
             </Button>
             <Button 
               variant="outline" 
@@ -72,7 +72,7 @@ const Hero = () => {
               <Linkedin className="h-6 w-6" />
             </a>
             <a 
-              href="mailto:alex@example.com"
+              href="mailto:ali@example.com"
               className="p-3 rounded-full bg-card/50 backdrop-blur-sm border border-border hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
             >
               <Mail className="h-6 w-6" />
@@ -82,7 +82,7 @@ const Hero = () => {
 
         <div className="animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
           <button
-            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
             className="animate-bounce"
           >
             <ArrowDown className="h-8 w-8 text-primary" />

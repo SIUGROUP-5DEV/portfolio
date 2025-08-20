@@ -38,6 +38,7 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Services', href: '/services', isExternal: true },
+    { name: 'Dashboard', href: '/dashboard', isExternal: true },
     { name: 'About', href: '#about', isExternal: false },
     { name: 'Projects', href: '#projects', isExternal: false },
     { name: 'Skills', href: '#skills', isExternal: false },

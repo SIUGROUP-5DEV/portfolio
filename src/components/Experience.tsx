@@ -158,18 +158,3 @@ const Experience = () => {
 };
 
 export default Experience;
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default Experience;
